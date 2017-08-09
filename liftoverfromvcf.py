@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("vcf")
 parser.add_argument("chain")
 parser.add_argument("--out","-o",nargs="?",default="LIFTEDOVER.vcf")
-parser.add_argument("--chr",help="Using --chr adds the prefix 'chr' to the bed file")
+parser.add_argument("--chr",help="Using --chr adds the prefix 'chr' to the bed file",action="store_true")
 
 args = parser.parse_args()
 #print args.vcf
@@ -58,18 +58,21 @@ writenewvcf = open(args.out ,"w")
 #print("Here")
 NEWINDEX = 0
 for line in allold:
-        if line[0] == '#':
-                writenewvcf.write(line)
-        else:
-                line = line.rstrip()
-                temp = line.split()
-                pos = temp[0] + ":" + str(int(temp[1])-1)
-                if unmapped.has_key(pos):
+	if line[0] == '#':
+		writenewvcf.write(line)
+	else:
+		line = line.rstrip()
+		temp = line.split()
+		if args.chr:
+			pos = "chr" + temp[0] + ":" + str(int(temp[1])-1)
+		else:
+			pos = temp[0] + ":" + str(int(temp[1])-1)
 
-                        donothing=1
-                else:
-                        writenewvcf.write(mappedpos[NEWINDEX] + "\t".join(temp[2:]) + "\n")
-                        NEWINDEX += 1
+		if unmapped.has_key(pos):
+			donothing=1
+		else:
+			writenewvcf.write(mappedpos[NEWINDEX] + "\t".join(temp[2:]) + "\n")
+			NEWINDEX += 1
 
 allold.close()
 writenewvcf.close()
