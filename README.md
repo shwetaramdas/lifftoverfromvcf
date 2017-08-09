@@ -8,7 +8,7 @@ http://hgdownload.cse.ucsc.edu/downloads.html#liftover
 python liftoverfromvcf.py oldvcf chainfile
 
 ## Optional Arguments:
---out : Output vcf file name.
+--out : Output vcf file name. If not provided, default output is LIFTEDOVER.vcf.
 --chr : If the chain file has the 'chr' prefix, and the input VCF file does not have it, use this argument.
 
 ## Example Usage:
