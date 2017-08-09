@@ -1,7 +1,7 @@
 # lifftoverfromvcf
 Code to liftover VCF from one genome build to another. Uses the USCS liftOver tool, but performs all the steps necessary to convert one VCF to another (and generates the intermediate bed files.)
 
-## Download gzipped chain files into your directory from:
+## Download the relevant gzipped chain files into your directory from:
 http://hgdownload.cse.ucsc.edu/downloads.html#liftover
 
 ## To run:
