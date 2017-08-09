@@ -9,6 +9,7 @@ python liftoverfromvcf.py oldvcf chainfile
 
 ## Optional Arguments:
 --out : Output vcf file name
+--chr : If the chain file has the 'chr' prefix, and the input VCF file does not have it, use this argument.
 
 ## Example Usage:
 $ python liftoverfromvcf.py All8Rats-rn4_gVCFpool.4nt.Pooled.vcf rn4ToRn6.over.chain.gz --out out.vcf
