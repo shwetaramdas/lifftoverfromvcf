@@ -5,6 +5,8 @@ Code to liftover VCF from one genome build to another. Uses the UCSC liftOver to
 http://hgdownload.cse.ucsc.edu/downloads.html#liftover
 
 ## To run:
+Run from the folder containing the liftoverfromvcf.py folder (and the liftOver tool).
+
 python liftoverfromvcf.py oldvcf chainfile
 
 ## Optional Arguments:
