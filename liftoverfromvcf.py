@@ -21,10 +21,10 @@ else:
 	command = 'grep -v "^#" ' + args.vcf+ '| ' + " awk '{print $1\" \"$2-1\" \"$2}'"+ ' > old.bed'
 
 print("Reading VCF...may take a few minutes for large VCFs...")
-#return_code = os.system(command)
+return_code = os.system(command)
 
 command = "./liftOver old.bed " + args.chain + " new.bed unmapped.txt"
-#os.system(command)
+os.system(command)
 
 print("Reading in unmapped co-ordinates...")
 unmapped = dict()
