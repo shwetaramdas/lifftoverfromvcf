@@ -23,6 +23,7 @@ else:
 print("Reading VCF...may take a few minutes for large VCFs...")
 return_code = os.system(command)
 
+os.system("chmod 755 ./liftOver")
 command = "./liftOver old.bed " + args.chain + " new.bed unmapped.txt"
 os.system(command)
 
