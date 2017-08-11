@@ -72,7 +72,7 @@ for line in allold:
 		if unmapped.has_key(pos):
 			donothing=1
 		else:
-			writenewvcf.write(mappedpos[NEWINDEX] + "\t".join(temp[2:]) + "\n")
+			writenewvcf.write(mappedpos[NEWINDEX] + "\t" + "\t".join(temp[2:]) + "\n")
 			NEWINDEX += 1
 
 allold.close()
